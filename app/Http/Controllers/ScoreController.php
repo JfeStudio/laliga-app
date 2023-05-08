@@ -63,7 +63,24 @@ class ScoreController extends Controller
      */
     public function update(Request $request, Score $score)
     {
-        //
+        $request->validate([
+            'selects.*.team_id' => 'nullable',
+        ]);
+        $data = $request->except('_token');
+
+         if ($data['win']) {
+            // bagaimana cara mengetahui dia menang berapa kali?
+            // jawabannya: $data['win'], karena $data['win'] berisi jumlah kemenangan, misal 2, maka dia menang 2 kali
+            // jadi, points = 2 * 3 = 6
+            $data['points'] = $data['win'] * 3;
+        } elseif ($data['draw']) {
+            $data['points'] = $data['draw'] * 1;
+        } elseif ($data['lose']) {
+            $data['points'] = $data['lose'] * 0;
+        }
+
+        $score->update($data);
+        return back();
     }
 
     /**

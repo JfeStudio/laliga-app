@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MonitoringController;
 use App\Http\Controllers\ScoreController;
 use App\Http\Controllers\TeamController;
 use Illuminate\Support\Facades\Route;
@@ -20,3 +21,4 @@ Route::get('/', function () {
 });
 Route::resource('teams', TeamController::class);
 Route::resource('scores', ScoreController::class);
+Route::resource('monitorings', MonitoringController::class);

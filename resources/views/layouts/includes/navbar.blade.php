@@ -17,7 +17,7 @@
                     <a class="nav-link" href="{{ route('scores.index') }}">Pertandingan</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Monitoring</a>
+                    <a class="nav-link" href="{{ route('monitorings.index') }}">Monitoring</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link disabled">Services</a>

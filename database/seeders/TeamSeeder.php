@@ -26,6 +26,30 @@ class TeamSeeder extends Seeder
                 'name_club' => 'Brighton & Hove Albion',
                 'city_club' => 'Brighton',
             ],
+            [
+                'name_club' => 'Burnley',
+                'city_club' => 'Burnley',
+            ],
+            [
+                'name_club' => 'Chelsea',
+                'city_club' => 'London',
+            ],
+            [
+                'name_club' => 'Crystal Palace',
+                'city_club' => 'London',
+            ],
+            [
+                'name_club' => 'Everton',
+                'city_club' => 'Liverpool',
+            ],
+            [
+                'name_club' => 'Fulham',
+                'city_club' => 'London',
+            ],
+            [
+                'name_club' => 'Leeds United',
+                'city_club' => 'Leeds',
+            ]
         ];
         foreach ($teams as $team) {
            Team::create($team);
