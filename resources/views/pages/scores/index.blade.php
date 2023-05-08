@@ -46,23 +46,22 @@
                 <form action="{{ route('scores.store') }}" method="post">
                     @csrf
                     <div class="card-body">
-                        <div class="row mb-2">
-                            <div class="col-8">
-                                <select class="form-select" name="team_id" aria-label="Default select example">
-                                    <option selected disabled value="">select club</option>
-                                    @foreach ($teams as $item)
-                                        <option value="{{ $item->id }}">{{ $item->name_club }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                            {{-- <div class="col">
-                            <label for="exampleFormControlInput1" class="form-label"></label>
-                            <input type="text" class="form-control" placeholder="Last name" aria-label="Last name">
-                        </div> --}}
-                            <div class="col">
-                                <button type="submit" class="btn btn-primary">
-                                    Add More
-                                </button>
+                        <div class="main">
+                            <div class="row mb-2">
+                                <div class="col-8">
+                                    <select class="form-select" name="selects[0][team_id]"
+                                        aria-label="Default select example">
+                                        <option selected disabled value="">select club</option>
+                                        @foreach ($teams as $item)
+                                            <option value="{{ $item->id }}">{{ $item->name_club }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="col">
+                                    <button type="button" id="add" class="btn btn-primary">
+                                        Add More
+                                    </button>
+                                </div>
                             </div>
                         </div>
                         <div>
@@ -75,4 +74,20 @@
             </div>
         </div>
     </div>
+    @push('add-more')
+        <script>
+            var i = 1;
+            $('#add').click(function() {
+                i++;
+                $('.main').append(
+                    '<div class="row mb-2"><div class="col-8"><select class="form-select" name="selects[' +
+                    i +
+                    '][team_id]" aria-label="Default select example"><option selected disabled value="">select club</option>@foreach ($teams as $item)<option value="{{ $item->id }}">{{ $item->name_club }}</option>@endforeach</select></div><div class="col"><button type="button" id="remove" class="btn btn-danger">Remove</button></div></div>'
+                );
+            });
+            $(document).on('click', '#remove', function() {
+                $(this).closest('.row').remove();
+            });
+        </script>
+    @endpush
 @endsection

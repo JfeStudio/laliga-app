@@ -32,10 +32,13 @@ class ScoreController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->all();
-        $data['team_id'] = $request->team_id;
+        $request->validate([
+            'selects.*.team_id' => 'required',
+        ]);
         // return $data;
-        Score::create($data);
+        foreach ($request->selects as $key => $value) {
+            Score::create($value);
+        }
         return back();
     }
 
