@@ -12,7 +12,9 @@ class TeamController extends Controller
      */
     public function index()
     {
-        //
+        return view('pages.teams.index', [
+            'teams' => Team::all(),
+        ]);
     }
 
     /**

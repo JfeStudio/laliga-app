@@ -11,7 +11,7 @@
                     <a class="nav-link text-white active" aria-current="page" href="#">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Club</a>
+                    <a class="nav-link" href="{{ route('teams.index') }}">Teams</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Pertandingan</a>
