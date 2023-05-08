@@ -14,7 +14,7 @@
                     <a class="nav-link" href="{{ route('teams.index') }}">Teams</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Pertandingan</a>
+                    <a class="nav-link" href="{{ route('scores.index') }}">Pertandingan</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Monitoring</a>

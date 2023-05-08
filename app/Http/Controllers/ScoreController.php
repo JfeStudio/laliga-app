@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Score;
+use App\Models\Team;
 use Illuminate\Http\Request;
 
 class ScoreController extends Controller
@@ -12,7 +13,10 @@ class ScoreController extends Controller
      */
     public function index()
     {
-        //
+        return view('pages.scores.index', [
+            'scores' => Score::latest()->get(),
+            'teams' => Team::all(),
+        ]);
     }
 
     /**
@@ -20,7 +24,7 @@ class ScoreController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -28,7 +32,11 @@ class ScoreController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        $data['team_id'] = $request->team_id;
+        // return $data;
+        Score::create($data);
+        return back();
     }
 
     /**
