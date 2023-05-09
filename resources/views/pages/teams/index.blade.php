@@ -33,23 +33,24 @@
         <div class="col-5">
             <h3 class='mb-3'>Create new team</h3>
             <div class="card">
-                <div class="card-body">
-                    <div class="mb-3">
-                        <label for="exampleFormControlInput1" class="form-label">Name Team</label>
-                        <input type="text" class="form-control" id="exampleFormControlInput1"
-                            placeholder="name@example.com">
+                <form action="{{ route('teams.store') }}" method="post">
+                    @csrf
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Name Team</label>
+                            <input type="text" name="name_club" class="form-control" id="exampleFormControlInput1"
+                                placeholder="name@example.com">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlTextarea1" class="form-label">Name City</label>
+                            <input type="text" name="city_club" class="form-control" id="exampleFormControlInput1"
+                                placeholder="name@example.com">
+                        </div>
+                        <div>
+                            <button type="submit" class="btn btn-primary"> Save </button>
+                        </div>
                     </div>
-                    <div class="mb-3">
-                        <label for="exampleFormControlTextarea1" class="form-label">Name City</label>
-                        <input type="text" class="form-control" id="exampleFormControlInput1"
-                            placeholder="name@example.com">
-                    </div>
-                    <div>
-                        <button type="submiy" class="btn btn-primary">
-                            Save
-                        </button>
-                    </div>
-                </div>
+                </form>
             </div>
         </div>
     </div>

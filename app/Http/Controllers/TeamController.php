@@ -13,7 +13,7 @@ class TeamController extends Controller
     public function index()
     {
         return view('pages.teams.index', [
-            'teams' => Team::all(),
+            'teams' => Team::latest()->get(),
         ]);
     }
 
@@ -30,7 +30,16 @@ class TeamController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name_club' => 'required|unique:teams',
+            'city_club' => 'required|string',
+        ],[
+            'name_club.required' => 'Nama Club harus diisi',
+            'name_club.unique' => 'Nama Club sudah ada',
+            'city_club.required' => 'Kota Club harus diisi',
+        ]);
+        Team::create($request->all());
+        return back();
     }
 
     /**
