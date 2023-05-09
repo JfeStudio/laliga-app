@@ -108,38 +108,20 @@
                 </table>
             </div>
         </div>
-        {{-- <div class="col">
-            <h3 class='mb-3'>Select list pertandingan</h3>
+        <div class="col-3">
+            <h3 class='mb-3 text-center'>Format</h3>
             <div class="card">
-                <form action="{{ route('monitorings.store') }}" method="post">
-                    @csrf
-                    <div class="card-body">
-                        <div class="main">
-                            <div class="row mb-2">
-                                <div class="col-8">
-                                    <select class="form-select" name="selects[0][team_id]"
-                                        aria-label="Default select example">
-                                        <option selected disabled value="">select club</option>
-                                        @foreach ($teams as $item)
-                                            <option value="{{ $item->id }}">{{ $item->name_club }}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                                <div class="col">
-                                    <button type="button" id="add" class="btn btn-primary">
-                                        Add More
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <button type="submiy" class="btn btn-primary">
-                                Save
-                            </button>
-                        </div>
-                    </div>
-                </form>
+                <ul class="list-group">
+                    <li class="list-group-item bg-dark text-white" aria-current="true">Laliga Official App</li>
+                    <li class="list-group-item">MA = <span class="badge text-bg-primary">MAIN</span></li>
+                    <li class="list-group-item">ME = <span class="badge text-bg-success">MENANG</span></li>
+                    <li class="list-group-item">S = <span class="badge text-bg-secondary">SERI</span></li>
+                    <li class="list-group-item">GM = <span class="badge text-bg-success">GOAL MENANG</span> <br /> (Total
+                        goal yang di cetak team tersebut)</li>
+                    <li class="list-group-item">GK = <span class="badge text-bg-danger">GOAL KALAH</span> <br /> (Total
+                        yang dicetak team lawan terhadapn team )</li>
+                </ul>
             </div>
-        </div> --}}
+        </div>
     </div>
 @endsection
