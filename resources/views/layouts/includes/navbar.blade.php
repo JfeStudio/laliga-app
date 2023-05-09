@@ -8,16 +8,16 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mb-2 mx-auto mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link text-white active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link {{ Route::is('teams.*') ? 'active' : '' }}"
+                        href="{{ route('teams.index') }}">Teams</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('teams.index') }}">Teams</a>
+                    <a class="nav-link {{ Route::is('scores.*') ? 'active' : '' }}"
+                        href="{{ route('scores.index') }}">Pertandingan</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('scores.index') }}">Pertandingan</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('monitorings.index') }}">Monitoring</a>
+                    <a class="nav-link {{ Route::is('monitorings.*') ? 'active' : '' }}"
+                        href="{{ route('monitorings.index') }}">Monitoring</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link disabled">Services</a>
