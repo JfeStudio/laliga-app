@@ -68,15 +68,14 @@ class ScoreController extends Controller
         ]);
         $data = $request->except('_token');
 
-         if ($data['win']) {
+         if ($data['win'] || $data['draw'] || $data['lose']) {
             // bagaimana cara mengetahui dia menang berapa kali?
             // jawabannya: $data['win'], karena $data['win'] berisi jumlah kemenangan, misal 2, maka dia menang 2 kali
             // jadi, points = 2 * 3 = 6
-            $data['points'] = $data['win'] * 3;
-        } elseif ($data['draw']) {
-            $data['points'] = $data['draw'] * 1;
-        } elseif ($data['lose']) {
-            $data['points'] = $data['lose'] * 0;
+            $data['points'] = $data['win'] * 3 + $data['draw'] * 1 + $data['lose'] * 0;
+            // cara baca: dia menang 2 kali, seri 1 kali, kalah 1 kali, maka points = 2 * 3 + 1 * 1 + 1 * 0 = 7
+        } else {
+            $data['points'] = 0;
         }
 
         $score->update($data);
