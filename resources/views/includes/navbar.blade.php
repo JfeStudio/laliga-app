@@ -23,9 +23,7 @@
                     <a class="nav-link disabled">Services</a>
                 </li>
             </ul>
-            <form action="" method="post">
-                <button type="submit" class="btn btn-outline-light">Login</button>
-            </form>
+            <h6 class="text-white m-0">👨🏻‍💻 Administrator</h6>
         </div>
     </div>
 </nav>
