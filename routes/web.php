@@ -3,6 +3,7 @@
 use App\Http\Controllers\MonitoringController;
 use App\Http\Controllers\ScoreController;
 use App\Http\Controllers\TeamController;
+use App\Models\Score;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,7 +18,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    $monitorings = Score::latest()->get();
+    return view('home', compact('monitorings'));
 });
 Route::resource('teams', TeamController::class);
 Route::resource('scores', ScoreController::class);
