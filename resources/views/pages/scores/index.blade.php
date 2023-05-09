@@ -5,7 +5,7 @@
             <h3 class='mb-3'>List Data Pertandingan</h3>
             <div class="table-responsive">
                 <table class="table table-bordered">
-                    <thead>
+                    <thead class="table-dark">
                         <tr class='text-center'>
                             <th scope="col">No</th>
                             <th scope="col">Club</th>
@@ -40,15 +40,16 @@
                 </table>
             </div>
         </div>
-        <div class="col">
+        <div class="col-4">
             <h3 class='mb-3'>Select list pertandingan</h3>
+            @include('flash::message')
             <div class="card">
                 <form action="{{ route('scores.store') }}" method="post">
                     @csrf
                     <div class="card-body">
                         <div class="main">
                             <div class="row mb-2">
-                                <div class="col-8">
+                                <div class="col-9">
                                     <select class="form-select" name="selects[0][team_id]"
                                         aria-label="Default select example">
                                         <option selected disabled value="">select club</option>
@@ -57,15 +58,16 @@
                                         @endforeach
                                     </select>
                                 </div>
-                                <div class="col">
-                                    <button type="button" id="add" class="btn btn-primary">
-                                        Add More
+                                <div class="col-2 px-0">
+                                    <button style="" type="button" id="add"
+                                        class="d-flex rounded-4 btn btn-primary">
+                                        <i style="font-size: 1.3rem;" class='m-auto bx bxs-plus-circle'></i>
                                     </button>
                                 </div>
                             </div>
                         </div>
                         <div>
-                            <button type="submiy" class="btn btn-primary">
+                            <button type="submiy" class="btn btn-sm btn-primary">
                                 Save
                             </button>
                         </div>
@@ -80,9 +82,9 @@
             $('#add').click(function() {
                 i++;
                 $('.main').append(
-                    '<div class="row mb-2"><div class="col-8"><select class="form-select" name="selects[' +
+                    '<div class="row mb-2"><div class="col-9"><select class="form-select" name="selects[' +
                     i +
-                    '][team_id]" aria-label="Default select example"><option selected disabled value="">select club</option>@foreach ($teams as $item)<option value="{{ $item->id }}">{{ $item->name_club }}</option>@endforeach</select></div><div class="col"><button type="button" id="remove" class="btn btn-danger">Remove</button></div></div>'
+                    '][team_id]" aria-label="Default select example"><option selected disabled value="">select club</option>@foreach ($teams as $item)<option value="{{ $item->id }}">{{ $item->name_club }}</option>@endforeach</select></div><div class="col px-0"><button type="button" id="remove" class="btn btn-danger"><i style="font-size: 1.1rem" class="bx bxs-trash"></i></button></div></div>'
                 );
             });
             $(document).on('click', '#remove', function() {

@@ -35,10 +35,16 @@ class ScoreController extends Controller
         $request->validate([
             'selects.*.team_id' => 'required',
         ]);
+
+        if ($request->selects == null) {
+            flash('Pilih tim terlebih dahulu!')->error();
+            return back();
+        }
         // return $data;
         foreach ($request->selects as $key => $value) {
             Score::create($value);
         }
+        flash('Data berhasil ditambahkan!')->success();
         return back();
     }
 

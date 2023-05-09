@@ -39,6 +39,7 @@ class TeamController extends Controller
             'city_club.required' => 'Kota Club harus diisi',
         ]);
         Team::create($request->all());
+        flash('Data berhasil ditambahkan!')->success();
         return back();
     }
 
@@ -71,6 +72,8 @@ class TeamController extends Controller
      */
     public function destroy(Team $team)
     {
-        //
+        $team->delete();
+        flash('Data berhasil dihapus')->success();
+        return back();
     }
 }

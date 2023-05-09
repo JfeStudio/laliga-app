@@ -1,11 +1,11 @@
 @extends('layouts.app')
 @section('content')
     <div class="d-flex gap-4 m-4">
-        <div class="col-7">
-            <h3 class='mb-3'>Monitoring Pertandingan</h3>
+        <div class="col-9">
+            <h3 class='mb-3 text-center'>Monitoring Pertandingan</h3>
             <div class="table-responsive">
                 <table class="table table-bordered">
-                    <thead>
+                    <thead class="table-dark">
                         <tr class='text-center'>
                             <th scope="col">No</th>
                             <th scope="col">Club</th>
@@ -32,7 +32,8 @@
                                         <div class="modal-dialog">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title
+                                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Setting Score
+                                                        Pertandingan
                                                         {{ $item->team->name_club }}</h1>
                                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                         aria-label="Close"></button>
