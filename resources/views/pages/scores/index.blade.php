@@ -8,15 +8,15 @@
                     <thead class="table-dark">
                         <tr class='text-center'>
                             <th scope="col">No</th>
-                            <th scope="col">Club</th>
-                            <th scope="col">Ma</th>
-                            <th scope="col">Me</th>
+                            <th scope="col">CLUB</th>
+                            <th scope="col">MA</th>
+                            <th scope="col">ME</th>
                             <th scope="col">S</th>
                             <th scope="col">K</th>
                             <th scope="col">GM</th>
                             <th scope="col">GK</th>
-                            <th scope="col">Point</th>
-                            <th scope="col">Action</th>
+                            <th scope="col">POINT</th>
+                            <th scope="col">ACTION</th>
                         </tr>
                     </thead>
                     <tbody>
