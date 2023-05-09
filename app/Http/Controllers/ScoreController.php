@@ -85,6 +85,7 @@ class ScoreController extends Controller
         }
 
         $score->update($data);
+        flash('Data update terbaru berhasil di simpan!')->success();
         return back();
     }
 
@@ -93,6 +94,8 @@ class ScoreController extends Controller
      */
     public function destroy(Score $score)
     {
-        //
+        $score->delete();
+        flash('Data berhasil dihapus!')->success();
+        return back();
     }
 }

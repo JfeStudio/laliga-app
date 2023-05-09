@@ -16,6 +16,7 @@
                             <th scope="col">GM</th>
                             <th scope="col">GK</th>
                             <th scope="col">Point</th>
+                            <th scope="col">Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -30,10 +31,19 @@
                                 <td>{{ $item->goal_for }}</td>
                                 <td>{{ $item->goal_against }}</td>
                                 <td>{{ $item->points }}</td>
+                                <td class='text-center'>
+                                    <form onsubmit="return confirm('apakah anda yakin?')"
+                                        action="{{ route('scores.destroy', $item->id) }}" method="post">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger btn-sm"><i
+                                                class='bx bxs-trash'></i></button>
+                                    </form>
+                                </td>
                             </tr>
                         @empty
                             <tr>
-                                <td colspan="9" class="text-center">Data Kosong</td>
+                                <td colspan="10" class="text-center">Data Kosong</td>
                             </tr>
                         @endforelse
                     </tbody>

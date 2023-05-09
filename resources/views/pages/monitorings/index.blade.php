@@ -3,8 +3,9 @@
     <div class="d-flex gap-4 m-4">
         <div class="col-9">
             <h3 class='mb-3 text-center'>Monitoring Pertandingan</h3>
+            @include('flash::message')
             <div class="table-responsive">
-                <table class="table table-bordered">
+                <table class="table table-bordered table-hover">
                     <thead class="table-dark">
                         <tr class='text-center'>
                             <th scope="col">No</th>
@@ -114,8 +115,9 @@
                 <ul class="list-group">
                     <li class="list-group-item bg-dark text-white" aria-current="true">Laliga Official App</li>
                     <li class="list-group-item">MA = <span class="badge text-bg-primary">MAIN</span></li>
-                    <li class="list-group-item">ME = <span class="badge text-bg-success">MENANG</span></li>
-                    <li class="list-group-item">S = <span class="badge text-bg-secondary">SERI</span></li>
+                    <li class="list-group-item">ME = <span class="badge text-bg-success">MENANG +3</span> </li>
+                    <li class="list-group-item">S = <span class="badge text-bg-secondary">SERI +1</span></li>
+                    <li class="list-group-item">K = <span class="badge text-bg-danger">KALAH : 0</span></li>
                     <li class="list-group-item">GM = <span class="badge text-bg-success">GOAL MENANG</span> <br /> (Total
                         goal yang di cetak team tersebut)</li>
                     <li class="list-group-item">GK = <span class="badge text-bg-danger">GOAL KALAH</span> <br /> (Total
