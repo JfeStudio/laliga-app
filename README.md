@@ -40,6 +40,10 @@ Preview pertandingan
 
 ![laliga](/public/assets/preview/preview-pertandingan.png)
 
+Data yang di ambil di select sudah relasi ke data team
+
+![laliga](/public/assets/preview/selecet-relasi-pertandingan.png)
+
 Tambah data pertandingan ( single )
 
 ![laliga](/public/assets/preview/tambah-data-pertandingan.png)
